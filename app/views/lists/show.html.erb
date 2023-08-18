@@ -1,11 +1,25 @@
+
+<div class="container">
 <h1><%= @list.name %></h1>
-<p><% @list.bookmarks.each do |bookmark|%></p>
-<p><%= bookmark.comment %></p>
-<p><%= bookmark.movie.title %></p>
+  <h2><% @list.bookmarks.each do |bookmark|%></h2>
+<div class="card-product">
+  <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> Poster" />
+  <div class="card-product-infos">
+    <p><%= bookmark.comment %></p>
+    <p><%= bookmark.movie.title %></p>
+  <%= link_to "+", bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}, class: "card-remove-link" %>
+  </div>
+</div>
+
+
+
+
+
+
 <% end %>
 
 <p><%= link_to "Return to my lists", lists_path %></p>
 
 <p><%= link_to "Create a bookmark", new_list_bookmark_path(@list) %></p>
-
-<%# <p><%= button_to "Delete bookmark", @bookmark, method: :delete %></p> 
+</div>

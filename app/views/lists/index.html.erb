@@ -1,7 +1,11 @@
-
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://wordpress.wbur.org/wp-content/uploads/2020/12/GettyImages-1150049038-1000x630.jpg');">
+</div> %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wordpress.wbur.org/wp-content/uploads/2020/12/GettyImages-1150049038-1000x630.jpg)">
+  Top Movies
+</div>
+<div>
 <h1>My Lists</h1>
-
-
+</div>
 <ul><% @lists.each do |list| %>
 <li><%= link_to list.name, list_path(list) %></li>
 <% end %>
