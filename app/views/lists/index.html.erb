@@ -6,10 +6,13 @@
 <div>
 <h1>My Lists</h1>
 </div>
-<ul><% @lists.each do |list| %>
-<li><%= link_to list.name, list_path(list) %></li>
-<% end %>
-</ul>
+<div class = "card-grid" >
+  <% @lists.each do |list| %>
+    <div class= "card-category" style= "background-image: url(<%= cl_image_path list.photo.key %>)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end %>
+</div>
 
 
 
