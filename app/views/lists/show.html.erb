@@ -2,22 +2,23 @@
 <div class="container">
 <h1><%= @list.name %></h1>
   <h2><% @list.bookmarks.each do |bookmark|%></h2>
-<div class = "card-grid" >
-<div class="card-product">
-  <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> Poster" />
-  <div class="card-product-infos">
-    <p><%= bookmark.comment %></p>
-    <p><%= bookmark.movie.title %></p>
-  <%= link_to "+", bookmark_path(bookmark),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}, class: "card-remove-link" %>
-  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-</div>
+  <div class = "card-grid" >
+    <div class="card-product">
+      <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> Poster" />
+      <div class="card-product-infos">
+        <p><%= bookmark.comment %></p>
+        <p><%= bookmark.movie.title %></p>
+        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+        <p><%= link_to "Update", edit_list_path(@list) %></p>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
+      </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<% end %>
-
-<p><%= link_to "Return to my lists", lists_path %></p>
-<p><%= link_to "Update", edit_list_path(@list) %></p>
-<p><%= link_to "Create a bookmark", new_list_bookmark_path(@list) %></p>
+<div>
+    <p><%= link_to "Return to my lists", lists_path %></p>
+    <p><%= link_to "Create a bookmark", new_list_bookmark_path(@list) %></p>
 </div>
