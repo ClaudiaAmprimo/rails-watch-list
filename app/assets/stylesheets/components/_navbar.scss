@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #231f20;
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +13,45 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: auto;
+  height: 55px;
+  margin-right: 5px;
+}
+
+.dropdown-items {
+  color: black;
+}
+
+#navbarSupportedContent {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  align-items: center;
+}
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.container-nav {
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-brand {
+  align-items: center;
+  display: flex;
+}
+
+.navbar-brand p {
+  margin: 0;
+}
+
+.nav-item {
+  list-style: none;
 }
