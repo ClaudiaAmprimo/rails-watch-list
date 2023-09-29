@@ -6,6 +6,15 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.active_storage.service = :cloudinary
+  config.active_storage.service_config = {
+    cloudinary: {
+      service: 'Cloudinary',
+      cloud_name: 'dz4ibgzwj',    # Replace with your Cloudinary cloud name
+      api_key: '499925347483352',          # Replace with your Cloudinary API key
+      api_secret: ENV['SFrq1x8Z1PzS0ejV_MgIkTNdF20']  # Access API secret from environment variable
+    }
+  }
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
