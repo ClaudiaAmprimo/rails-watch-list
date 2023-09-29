@@ -1,11 +1,19 @@
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wordpress.wbur.org/wp-content/uploads/2020/12/GettyImages-1150049038-1000x630.jpg)">
-  Top Movies
+  <p>Top Movies</p>
 </div>
-<div class = "card-grid" >
-  <% @lists.each do |list| %>
-    <div class= "card-category" style= "background-image: url(<%= cl_image_path list.photo.key %>)">
-      <%= link_to list.name, list_path(list) %>
-    </div>
-  <% end %>
+<div class="container">
+<h2>My Lists</h2>
+  <div class = "card-grid" >
+    <% @lists.each do |list| %>
+      <div class= "card-category" style= "background-image: url(<%= cl_image_path list.photo.key %>)">
+        <div class="card-title">
+          <h3><%= link_to list.name, list_path(list) %></h3>
+        </div>
+          <%= link_to edit_list_path(list) do %>
+            <div class="update-icon"><i class="fa-solid fa-pen-to-square" style="color: #E6E6E6;"></i>
+            <% end %>
+            </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<h1>My Lists</h1>
