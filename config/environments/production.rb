@@ -1,4 +1,5 @@
 require "active_support/core_ext/integer/time"
+require "cloudinary"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -7,9 +8,6 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.active_storage.service = :cloudinary
-  # config.cloudinary.cloud_name = ENV['CLOUDINARY_CLOUD_NAME']
-  # config.cloudinary.api_key = ENV['CLOUDINARY_API_KEY']
-  # config.cloudinary.api_secret = ENV['CLOUDINARY_API_SECRET']
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
