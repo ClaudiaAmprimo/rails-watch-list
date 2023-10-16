@@ -210,6 +210,8 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -271,6 +273,7 @@ DEPENDENCIES
   rails (~> 7.0.7)
   rails-controller-testing
   rspec-rails
+  ruby-vips
   sassc-rails
   simple_form
   sprockets-rails
